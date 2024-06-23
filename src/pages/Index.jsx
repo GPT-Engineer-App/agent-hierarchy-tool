@@ -23,16 +23,17 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4} boxShadow="md" p="6" rounded="md" bg="white">
+    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bg="blue.500">
+      <Text fontSize="2xl" fontWeight="bold" color="white" mb={4}>Team Pachincko</Text>
+      <VStack spacing={4} boxShadow="md" p="6" rounded="md" bg="gray.200">
         <HStack spacing={4}>
           <Input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
           <Select value={isAgent} onChange={(e) => setIsAgent(e.target.value === "true")}>
             <option value="true">Agent</option>
             <option value="false">Player</option>
           </Select>
-          <Button onClick={fetchHierarchy}>Get Hierarchy</Button>
         </HStack>
+        <Button onClick={fetchHierarchy} bg="blue.500" color="white">Get Hierarchy</Button>
       </VStack>
       <VStack spacing={4} mt={8} boxShadow="md" p="6" rounded="md" bg="gray.50" width="100%">
         {hierarchy.map((user, index) => (
