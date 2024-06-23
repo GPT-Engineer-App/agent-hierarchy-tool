@@ -8,8 +8,12 @@ const Footer = () => {
   const [showIframe, setShowIframe] = useState(false);
 
   const handleLinkClick = (url) => {
-    setIframeSrc(url);
-    setShowIframe(true);
+    if (url === "/") {
+      window.location.reload();
+    } else {
+      setIframeSrc(url);
+      setShowIframe(true);
+    }
   };
 
   const handleOpenInNewTab = () => {
