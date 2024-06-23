@@ -23,9 +23,9 @@ const Login = () => {
   };
 
   return (
-    <Container centerContent maxW="container.sm" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bg={colorMode === "light" ? "blue.500" : "blue.800"}>
-      <Box boxShadow="md" p="6" rounded="md" bg="gray.200">
-        <Text fontSize="2xl" fontWeight="bold" color={colorMode === "light" ? "black" : "gray.200"} mb={4}>Login</Text>
+    <Container centerContent maxW="container.sm" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bg={colorMode === "light" ? "blue.500" : "gray.900"}>
+      <Box boxShadow="md" p="6" rounded="md" bg={colorMode === "light" ? "gray.200" : "gray.700"}>
+        <Text fontSize="2xl" fontWeight="bold" color={colorMode === "light" ? "black" : "gray.400"} mb={4}>Login</Text>
         <VStack spacing={4}>
           <Input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
           <Input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />

@@ -25,9 +25,9 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bg={colorMode === "light" ? "blue.500" : "blue.800"}>
+    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bg={colorMode === "light" ? "blue.500" : "gray.900"}>
       <Text fontSize="2xl" fontWeight="bold" color={colorMode === "light" ? "white" : "gray.200"} mb={4}>Username Information Checker</Text>
-      <VStack spacing={4} boxShadow="md" p="6" rounded="md" bg="gray.200">
+      <VStack spacing={4} boxShadow="md" p="6" rounded="md" bg={colorMode === "light" ? "gray.200" : "gray.700"}>
         <HStack spacing={4}>
           <Input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
           <Select value={isAgent} onChange={(e) => setIsAgent(e.target.value === "true")}>
@@ -37,9 +37,9 @@ const Index = () => {
         </HStack>
         <Button onClick={fetchHierarchy} bg="blue.500" color="white">Submit</Button>
       </VStack>
-      <VStack spacing={4} mt={8} boxShadow="md" p="6" rounded="md" bg="gray.50" width="100%">
+      <VStack spacing={4} mt={8} boxShadow="md" p="6" rounded="md" bg={colorMode === "light" ? "gray.50" : "gray.800"} width="100%">
         {hierarchy.map((user, index) => (
-          <Box key={user.clientId} boxShadow="md" p="4" rounded="md" bg="white" width="100%">
+          <Box key={user.clientId} boxShadow="md" p="4" rounded="md" bg={colorMode === "light" ? "white" : "gray.700"} width="100%">
             <VStack spacing={2} divider={<StackDivider borderColor="gray.200" />}>
               <Text fontSize="lg" fontWeight="bold">{user.username}</Text>
               <Text fontSize="md">UserID: {user.clientId}</Text>
