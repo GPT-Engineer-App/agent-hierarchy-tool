@@ -1,11 +1,12 @@
 import React from "react";
-import { Box, Flex, IconButton, Text, Button, useDisclosure, VStack, HStack } from "@chakra-ui/react";
+import { Box, Flex, IconButton, Text, Button, useDisclosure, VStack, HStack, useColorMode } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import { FaHome, FaUserShield, FaGamepad, FaCog } from "react-icons/fa";
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { toggleColorMode } = useColorMode();
 
   return (
     <Box position="sticky" top="0" zIndex="1000" bg="blue.700" p={4} boxShadow="md">
@@ -45,7 +46,7 @@ const Header = () => {
                 <Text>Game</Text>
               </HStack>
             </Link>
-            <HStack onClick={toggleColorMode}>
+            <HStack as="button" onClick={toggleColorMode}>
               <FaCog />
               <Text>Toggle Theme</Text>
             </HStack>
