@@ -1,12 +1,24 @@
-import React from "react";
-import { Box, Flex, IconButton, Text, Button, useDisclosure, VStack, HStack, useColorMode } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, Flex, IconButton, Text, useDisclosure, VStack, HStack, useColorMode } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { Link } from "react-router-dom";
-import { FaHome, FaUserShield, FaGamepad, FaCog } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import { FaHome, FaUserShield, FaGamepad, FaCog, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { toggleColorMode } = useColorMode();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+
+  const handleAuthToggle = () => {
+    if (isAuthenticated) {
+      setIsAuthenticated(false);
+      navigate("/");
+    } else {
+      setIsAuthenticated(true);
+      navigate("/mainPage123");
+    }
+  };
 
   return (
     <Box position="sticky" top="0" zIndex="1000" bg="blue.700" p={4} boxShadow="md">
@@ -21,9 +33,12 @@ const Header = () => {
           <Text fontSize="2xl" fontWeight="bold" color="white">Team Pachinko</Text>
           <Text fontSize="md" color="white">Home</Text>
         </VStack>
-        <Button colorScheme="teal" variant="outline">
-          Login/Logout
-        </Button>
+        <IconButton
+          icon={isAuthenticated ? <FaSignOutAlt /> : <FaSignInAlt />}
+          onClick={handleAuthToggle}
+          variant="outline"
+          color="white"
+        />
       </Flex>
       {isOpen && (
         <Box mt={4} bg="blue.600" p={4} rounded="md">
