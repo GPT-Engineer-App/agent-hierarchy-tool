@@ -6,7 +6,7 @@ import { FaHome, FaUserShield, FaGamepad, FaCog, FaSignInAlt, FaSignOutAlt } fro
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { toggleColorMode } = useColorMode();
+  const { toggleColorMode, colorMode } = useColorMode();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <Box position="sticky" top="0" zIndex="1000" bg="blue.700" p={4} boxShadow="md">
+    <Box position="sticky" top="0" zIndex="1000" bg={colorMode === "light" ? "blue.700" : "blue.900"} p={4} boxShadow="md">
       <Flex justify="space-between" align="center">
         <IconButton
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -30,8 +30,8 @@ const Header = () => {
           color="white"
         />
         <VStack spacing={0} align="center">
-          <Text fontSize="2xl" fontWeight="bold" color="white">Team Pachinko</Text>
-          <Text fontSize="md" color="white">Home</Text>
+          <Text fontSize="2xl" fontWeight="bold" color={colorMode === "light" ? "white" : "gray.200"}>Team Pachinko</Text>
+          <Text fontSize="md" color={colorMode === "light" ? "white" : "gray.200"}>Home</Text>
         </VStack>
         <IconButton
           icon={isAuthenticated ? <FaSignOutAlt /> : <FaSignInAlt />}

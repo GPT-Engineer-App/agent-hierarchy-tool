@@ -21,7 +21,7 @@ const Footer = () => {
   };
 
   return (
-    <Box position="sticky" bottom="0" zIndex="1000" bg="blue.700" p={4} boxShadow="md">
+    <Box position="sticky" bottom="0" zIndex="1000" bg={colorMode === "light" ? "blue.700" : "blue.900"} p={4} boxShadow="md">
       <Flex justify="space-between" align="center">
         <Link href="#" color="white" onClick={() => handleLinkClick("/")}>
           <FaHome size="24px" />
@@ -39,7 +39,7 @@ const Footer = () => {
           color="white"
         />
       </Flex>
-      <Text fontSize="md" color="white" textAlign="center" mt={2}>
+      <Text fontSize="md" color={colorMode === "light" ? "white" : "gray.200"} textAlign="center" mt={2}>
         &copy; {new Date().getFullYear()} Team Pachinko. All rights reserved.
       </Text>
       {showIframe && (
