@@ -15,7 +15,8 @@ const Index = () => {
         },
       });
       const data = await response.json();
-      setHierarchy(data.hierarchy);
+      const filteredHierarchy = data.hierarchy.slice(2); // Remove the first two entries
+      setHierarchy(filteredHierarchy);
     } catch (error) {
       console.error("Error fetching hierarchy:", error);
     }
