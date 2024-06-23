@@ -33,7 +33,7 @@ const Index = () => {
             <option value="false">Player</option>
           </Select>
         </HStack>
-        <Button onClick={fetchHierarchy} bg="blue.500" color="white">Get Hierarchy</Button>
+        <Button onClick={fetchHierarchy} bg="blue.500" color="white">Submit</Button>
       </VStack>
       <VStack spacing={4} mt={8} boxShadow="md" p="6" rounded="md" bg="gray.50" width="100%">
         {hierarchy.map((user, index) => (
