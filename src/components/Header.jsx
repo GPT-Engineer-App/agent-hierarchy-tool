@@ -7,7 +7,7 @@ const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box position="sticky" top="0" zIndex="1000" bg="blue.500" p={4} boxShadow="md">
+    <Box position="sticky" top="0" zIndex="1000" bg="blue.700" p={4} boxShadow="md">
       <Flex justify="space-between" align="center">
         <IconButton
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
