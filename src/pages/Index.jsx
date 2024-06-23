@@ -24,7 +24,7 @@ const Index = () => {
 
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bg="blue.500">
-      <Text fontSize="2xl" fontWeight="bold" color="white" mb={4}>Team Pachincko</Text>
+      <Text fontSize="2xl" fontWeight="bold" color="white" mb={4}>Username Information Checker</Text>
       <VStack spacing={4} boxShadow="md" p="6" rounded="md" bg="gray.200">
         <HStack spacing={4}>
           <Input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
