@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <Box position="sticky" top="0" zIndex="1000" bg={colorMode === "light" ? "blue.700" : "blue.900"} p={4} boxShadow="md">
+    <Box position="sticky" top="0" zIndex="1000" bg={colorMode === "light" ? "blue.700" : "gray.800"} p={4} boxShadow="md">
       <Flex justify="space-between" align="center">
         <IconButton
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -30,8 +30,8 @@ const Header = () => {
           color="white"
         />
         <VStack spacing={0} align="center">
-          <Text fontSize="2xl" fontWeight="bold" color={colorMode === "light" ? "white" : "gray.200"}>Team Pachinko</Text>
-          <Text fontSize="md" color={colorMode === "light" ? "white" : "gray.200"}>Home</Text>
+          <Text fontSize="2xl" fontWeight="bold" color={colorMode === "light" ? "white" : "gray.400"}>Team Pachinko</Text>
+          <Text fontSize="md" color={colorMode === "light" ? "white" : "gray.400"}>Home</Text>
         </VStack>
         <IconButton
           icon={isAuthenticated ? <FaSignOutAlt /> : <FaSignInAlt />}
@@ -41,7 +41,7 @@ const Header = () => {
         />
       </Flex>
       {isOpen && (
-        <Box mt={4} bg="blue.600" p={4} rounded="md">
+        <Box mt={4} bg={colorMode === "light" ? "blue.600" : "gray.700"} p={4} rounded="md">
           <VStack spacing={4} align="start">
             <Link to="/">
               <HStack>

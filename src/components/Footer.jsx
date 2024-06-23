@@ -21,7 +21,7 @@ const Footer = () => {
   };
 
   return (
-    <Box position="sticky" bottom="0" zIndex="1000" bg={colorMode === "light" ? "blue.700" : "blue.900"} p={4} boxShadow="md">
+    <Box position="sticky" bottom="0" zIndex="1000" bg={colorMode === "light" ? "blue.700" : "gray.800"} p={4} boxShadow="md">
       <Flex justify="space-between" align="center">
         <Link href="#" color="white" onClick={() => handleLinkClick("/")}>
           <FaHome size="24px" />
@@ -39,11 +39,11 @@ const Footer = () => {
           color="white"
         />
       </Flex>
-      <Text fontSize="md" color={colorMode === "light" ? "white" : "gray.200"} textAlign="center" mt={2}>
+      <Text fontSize="md" color={colorMode === "light" ? "white" : "gray.400"} textAlign="center" mt={2}>
         &copy; {new Date().getFullYear()} Team Pachinko. All rights reserved.
       </Text>
       {showIframe && (
-        <Box mt={4}>
+        <Box mt={4} bg={colorMode === "light" ? "gray.200" : "gray.700"}>
           <iframe src={iframeSrc} width="100%" height="500px" title="iframe-content" />
           <Button mt={2} onClick={handleOpenInNewTab} colorScheme="teal" variant="outline">
             Open in New Tab
